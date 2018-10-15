@@ -6,23 +6,29 @@ app = Flask(__name__)
 
 @app.route("/") #annotation tells the url that will make this function run
 def render_main():
-    return render_template('index.html')
-    # 1: Looks for, creates, and sets global variables in template
-    # 2: Content from blocks in child copied into layout template
-    # 3: If statements run
-    # 4: Final rendered HTML send to client
+    return render_template('home.html')
 
-@app.route("/createAPage")
+@app.route("/len-n-dist")
 def render_cop():
-    return render_template('createAPage.html')
+    units = ["Miles","Kilometers","Feet","Meters"]
+    return render_template('length-and-distance.html', units=units)
 
-@app.route("/pageSummary")
+@app.route("/currency")
 def render_psum():
-    return render_template('pageSummary.html')
+    return render_template('currency.html')
 
-@app.route("/wikiPage")
+@app.route("/weight")
 def render_wikiPage():
-    return render_template('blankPage.html')
+    return render_template('weight.html')
+
+@app.route("/weight")
+def render_wikiPage():
+    return render_template('weight.html')
+
+@app.route("/out")
+def render_wikiPage():
+    vals = request.args
+    return render_template('out.html', inVal1 = vals["val1"], inVal2 = vals["val2"], inUnit1 = vals["unit1"], inUnit2 = vals["unit2"])
 
 if __name__=="__main__":
     app.run(debug=False, port=54321)
