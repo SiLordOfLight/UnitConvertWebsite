@@ -13,17 +13,17 @@ def render_cop():
     units = ["Miles","Kilometers","Feet","Meters"]
     return render_template('length-and-distance.html', units=units)
 
-@app.route("/currency")
-def render_psum():
-    return render_template('currency.html')
-
-@app.route("/weight")
-def render_wikiPage():
-    return render_template('weight.html')
-
-@app.route("/weight")
-def render_wikiPage():
-    return render_template('weight.html')
+# @app.route("/currency")
+# def render_psum():
+#     return render_template('currency.html')
+#
+# @app.route("/time")
+# def render_wikiPage():
+#     return render_template('time.html')
+#
+# @app.route("/weight")
+# def render_wikiPage():
+#     return render_template('weight.html')
 
 @app.route("/out")
 def render_wikiPage():
