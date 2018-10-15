@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{%block title%}{%endblock%}</title>
+
+    <!-- <link rel="stylesheet" href="{{url_for('static', filename=styleName)}}"> -->
+  </head>
+  <body>
+    <h1>{%block convType%}{%endblock%}</h1>
+
+    <form class="convForm" action="{{pageLoc}}" method="post" name="convForm">
+      <input type="text" name="val1" value="0">
+      <select class="typeSelect" name="unit1" form="convForm">
+        {%for uni in units%}
+        <option value="{{uni}}"></option>
+        {%endfor%}
+      </select>
+      <br/>
+      <input type="text" name="val2" value="0">
+      <select class="typeSelect" name="unit2" form="convForm">
+        {%for uni in units%}
+        <option value="{{uni}}"></option>
+        {%endfor%}
+      </select>
+    </form>
+  </body>
+</html>
