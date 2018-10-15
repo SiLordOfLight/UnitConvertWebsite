@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>{%block title%}{%endblock%}</title>
+    <title>Home</title>
 
     <!-- jQuery -->
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -13,27 +13,10 @@
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
    <link rel="stylesheet" href="{{url_for('static', filename='navbarStyle.css')}}">
-
-    <!-- <link rel="stylesheet" href="{{url_for('static', filename=styleName)}}"> -->
   </head>
   <body>
     {%include "navbar.html"%}
-    <h1>{%block convType%}{%endblock%}</h1>
 
-    <form class="convForm" action="{{pageLoc}}" method="post" name="convForm">
-      <input type="text" name="val1" value="0">
-      <select class="typeSelect" name="unit1" form="convForm">
-        {%for uni in units%}
-        <option value="{{uni}}"></option>
-        {%endfor%}
-      </select>
-      <br/>
-      <input type="text" name="val2" value="0">
-      <select class="typeSelect" name="unit2" form="convForm">
-        {%for uni in units%}
-        <option value="{{uni}}"></option>
-        {%endfor%}
-      </select>
-    </form>
+    <h1>Convert Units!</h1>
   </body>
 </html>
