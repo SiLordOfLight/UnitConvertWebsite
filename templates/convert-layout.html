@@ -4,17 +4,15 @@
     <meta charset="utf-8">
     <title>{%block title%}{%endblock%}</title>
 
-    <!-- jQuery -->
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-   <!-- Bootstrap 4 -->
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+      <!-- jQuery -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+     <!-- Bootstrap 4 -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
-   <!-- <link rel="stylesheet" href="{{url_for('static', filename='navbarStyle.css')}}"> -->
-
-    <!-- <link rel="stylesheet" href="{{url_for('static', filename=styleName)}}"> -->
+    <link rel="stylesheet" href="{{url_for('static', filename='convert.css')}}">
   </head>
   <body>
     {%include "navbar.html"%}
@@ -23,9 +21,30 @@
     <!-- <p>{{units}}</p> -->
 
     <form class="convForm" action="{{pageLoc}}" name="convForm">
-      <input type="text" name="val1" value="0">
 
-      <select class="typeSelect" name="unit1">
+      <label for="val1Inp">Convert</label>
+      <div class="row">
+        <div class="col-8">
+          <div class="form-group">
+            <input type="text" name="val1" class="form-control" id="val1Inp" placeholder="Enter value">
+          </div>
+        </div>
+
+        <div class="col-4">
+          <!-- <label for="uni1sel"></label> -->
+          <select class="custom-select" name="unit1" id="uni1sel">
+            {%for uni in units%}
+            <option value="{{uni}}">{{uni}}</option>
+            {%endfor%}
+          </select>
+        </div>
+
+      </div>
+
+      <br/>
+
+      <label for="uni2sel">To</label>
+      <select class="custom-select" name="unit2" id="uni2sel">
         {%for uni in units%}
         <option value="{{uni}}">{{uni}}</option>
         {%endfor%}
@@ -33,15 +52,7 @@
 
       <br/>
 
-      <input type="text" name="val2" value="0">
-
-      <select class="typeSelect" name="unit2">
-        {%for uni in units%}
-        <option value="{{uni}}">{{uni}}</option>
-        {%endfor%}
-      </select>
-
-      <input type="submit" name="submit" value="Convert!">
+      <button type="submit" class="btn btn-primary">Convert!</button>
     </form>
   </body>
 </html>
