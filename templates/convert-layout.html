@@ -20,6 +20,8 @@
     {%include "navbar.html"%}
     <h1>{%block convType%}{%endblock%}</h1>
 
+    <p>{{units}}</p>
+
     <form class="convForm" action="{{pageLoc}}" method="post" name="convForm">
       <input type="text" name="val1" value="0">
       <select class="typeSelect" name="unit1" form="convForm">
