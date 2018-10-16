@@ -20,7 +20,7 @@
     {%include "navbar.html"%}
     <h1>{%block convType%}{%endblock%}</h1>
 
-    <p>{{units}}</p>
+    <!-- <p>{{units}}</p> -->
 
     <form class="convForm" action="{{pageLoc}}" method="post" name="convForm">
       <input type="text" name="val1" value="0">
@@ -33,7 +33,7 @@
       <input type="text" name="val2" value="0">
       <select class="typeSelect" name="unit2" form="convForm">
         {%for uni in units%}
-        <option value="{{uni}}"></option>
+        <option value="{{uni}}">{{uni}}</option>
         {%endfor%}
       </select>
     </form>
