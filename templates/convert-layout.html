@@ -24,14 +24,18 @@
 
     <form class="convForm" action="{{pageLoc}}" name="convForm">
       <input type="text" name="val1" value="0">
-      <select class="typeSelect" name="unit1" form="convForm">
+
+      <select class="typeSelect" name="unit1">
         {%for uni in units%}
         <option value="{{uni}}">{{uni}}</option>
         {%endfor%}
       </select>
+
       <br/>
+
       <input type="text" name="val2" value="0">
-      <select class="typeSelect" name="unit2" form="convForm">
+
+      <select class="typeSelect" name="unit2">
         {%for uni in units%}
         <option value="{{uni}}">{{uni}}</option>
         {%endfor%}
