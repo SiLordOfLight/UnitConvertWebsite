@@ -16,6 +16,11 @@ form {
 }
 
 .btn {
-  margin: auto;
+  margin-left: 50%;
   margin-top: 10px;
+}
+
+#out {
+  padding-left: 10px;
+  padding-right: 10px;
 }
