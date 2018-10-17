@@ -107,10 +107,17 @@ def render_weight():
         result = conv.convert(inputValue, inputUnit, outputUnit)
         showResult = "%s %s -> %s %s" % (str(inputValue).rstrip('0').rstrip('.'), inputUnit, str(result).rstrip('0').rstrip('.'), outputUnit)
         # print(showResult)
+<<<<<<< HEAD
         return render_template('energy.html', units=units, result=showResult)
     except Exception as e:
         # print(e)
         return render_template('energy.html', units=units, result="")
+=======
+        return render_template('planets.html', units=units, result=showResult)
+    except Exception as e:
+        # print(e)
+        return render_template('planets.html', units=units, result="")
+>>>>>>> 4ddde42f27e50b7cafb28d2b85f0b6eadc6fd215
 
 if __name__=="__main__":
     app.run(debug=False, port=54321)
