@@ -79,7 +79,7 @@ def render_weight():
         return render_template('weight.html', units=units, result="")
 
 @app.route("/planets")
-def render_weight():
+def render_planets():
     units = ["lbs on Earth", "lbs on Mars", "lbs on the Moon", "lbs on Ceres", "lbs on Mercury", "lbs on Titan", "lbs on Pluto"]
 
     try:
