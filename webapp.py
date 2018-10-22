@@ -96,7 +96,7 @@ def render_weight():
         return render_template('planets.html', units=units, result="")
 
 @app.route("/energy")
-def render_weight():
+def render_energy():
     units = ["Joules", "Kilojoules", "Calories", "Kilocalories", "Kilowatt Hour"]
 
     try:
